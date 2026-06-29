@@ -1,6 +1,6 @@
 services:
   sync:
-    image: "ghcr.io/skiller-whale/learnersync:0.2.7"
+    image: "ghcr.io/skiller-whale/learnersync:0.2.4"
     network_mode: "host"
     environment:
       SERVER_URL: https://train.skillerwhale.com
@@ -15,17 +15,3 @@ services:
       - ./attendance_id:/app/sync/attendance_id
     tty: true
     stdin_open: true
-  chat_client:
-    image: "ghcr.io/skiller-whale/bedrock-chat-client:v0.1.9"
-    volumes:
-      - ./exercises/logging:/app/logging
-    ports:
-      - 1001:3000
-    environment:
-      ATTENDANCE_ID: "${SW_ATTENDANCE_ID}"
-      NEXT_TELEMETRY_DISABLED: 1
-  continue_session_sync_filter:
-    image: "ghcr.io/skiller-whale/continue-session-sync-filter:0.0.2"
-    volumes:
-      - /home/learner/.continue/sessions:/sessions_raw
-      - /home/learner/genai/.chat_history:/sessions_filtered

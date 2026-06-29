@@ -1,4 +1,4 @@
-# Skiller Whale, Exercises for Generative AI
+# Skiller Whale, Exercises for Generative AI: Integrating with LLMs (LangChain)
 
 This repo includes exercises to accompany Skiller Whale sessions on Generative AI.
 
