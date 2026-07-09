@@ -2,7 +2,7 @@ import time
 from pprint import pprint
 from utils import get_attendance_id
 
-from langchain_aws import ChatBedrock
+from langchain_aws import ChatBedrockConverse
 from langchain.messages import AIMessage, HumanMessage, SystemMessage
 
 # Exercise 4 - Streaming/Blocking
@@ -15,7 +15,7 @@ from langchain.messages import AIMessage, HumanMessage, SystemMessage
 #       * Is there a noticeable difference in time-to-first token for each message?
 #
 
-model = ChatBedrock(
+model = ChatBedrockConverse(
     model='eu.amazon.nova-pro-v1:0',
     endpoint_url='https://bedrock-runtime.aws-proxy.skillerwhale.com/',
     region_name='eu-west-1',
@@ -28,7 +28,7 @@ model = ChatBedrock(
 user_messages = [
     HumanMessage('Explain the major limitations of LLMs.'),
     # HumanMessage('Write Clojure code to find the shortest route between two points in a network. Be concise.'),
-    # HumanMessage('What is the smallest species of whale?')
+    # HumanMessage('What is the smallest species of whale? Explain thoroughly.')
 ]
 
 

@@ -1,14 +1,14 @@
 from pprint import pprint
 from utils import get_attendance_id
 
-from langchain_aws import ChatBedrock
+from langchain_aws import ChatBedrockConverse
 from langchain.messages import HumanMessage, SystemMessage
 
 from pydantic import BaseModel
 
 from data.animals import animal_data
 
-model = ChatBedrock(
+model = ChatBedrockConverse(
     model='eu.amazon.nova-pro-v1:0',
     endpoint_url='https://bedrock-runtime.aws-proxy.skillerwhale.com/',
     region_name='eu-west-1',

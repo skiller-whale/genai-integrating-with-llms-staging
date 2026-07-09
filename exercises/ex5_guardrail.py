@@ -1,7 +1,7 @@
 import boto3
 from utils import get_attendance_id
 
-from langchain_aws import ChatBedrock
+from langchain_aws import ChatBedrockConverse
 from langchain.messages import HumanMessage, SystemMessage
 
 
@@ -55,7 +55,7 @@ if orange_juice_guardrail is None:
 
 
 # instantiate model
-model = ChatBedrock(
+model = ChatBedrockConverse(
     model='eu.amazon.nova-pro-v1:0',
     client=runtime_client,
     guardrails={
